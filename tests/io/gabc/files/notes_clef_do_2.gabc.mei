@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://music-encoding.org/schema/dev/mei-all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/dev/mei-all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0.0-dev">
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title/>
+            </titleStmt>
+            <pubStmt/>
+        </fileDesc>
+    </meiHead>
+    <music>
+        <body>
+            <mdiv type="solesmes">
+                <score>
+                    <scoreDef>
+                        <staffGrp>
+                            <staffDef n="1" notationtype="neume" lines="4"/>
+                        </staffGrp>
+                    </scoreDef>
+                    <section>
+                        <staff n="1">
+                            <layer n="1">
+                                <clef shape="C" line="2"/>
+                                <neume type="punctum">
+                                    <nc pname="e" oct="3"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="f" oct="3"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="g" oct="3"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="a" oct="3"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="b" oct="3"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="c" oct="4"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="d" oct="4"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="e" oct="4"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="f" oct="4"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="g" oct="4"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="a" oct="4"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="b" oct="4"/>
+                                </neume>
+                                <neume type="punctum">
+                                    <nc pname="c" oct="5"/>
+                                </neume>
+                            </layer>
+                        </staff>
+                    </section>
+                </score>
+            </mdiv>
+        </body>
+    </music>
+</mei>
