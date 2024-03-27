@@ -25,17 +25,21 @@ import gabc_grammar, {
     CirculusContext, Semi_circulusContext, Reversed_semi_circulusContext,
     Punctum_cavumContext
 } from "../generated/antlr/gabc_grammar";
+import {v4 as uuidv4} from "uuid";
 import gabc_lexer from "../generated/antlr/gabc_lexer";
 import gabc_grammarVisitor from "../generated/antlr/gabc_grammarVisitor";
 
 import builder, {XMLElement} from 'xmlbuilder';
-import {EClefShapes, ELineOrSpace, IPositionInStaff, mOOsicaeFactory} from "../index";
-import {newID} from "../adt";
+import {EClefShapes, IId, mOOsicaeFactory} from "../index";
 import {gabcPitchToPositionInStaff} from "./gabc_utils";
+import {IDImpl} from "../impl/moosicae.impl";
 
-const MEI_VERSION = "5.0.0-dev";
 const SCHEMA_VERSION_INSTRUCTION = 'href="https://music-encoding.org/schema/dev/mei-all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"';
 const SCHEMATRON_INSTRUCTION = 'href="https://music-encoding.org/schema/dev/mei-all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"';
+
+function newID(): IId {
+    return new IDImpl(true, uuidv4());
+}
 
 /**
  * TODO This class encapsulates the interaction with mOOsicae that will be decoupled for Repertorium
@@ -78,7 +82,7 @@ class GABC2MEITransducerVisitor extends ParseTreeVisitor<void> implements gabc_g
         this.transduction.instructionBefore('xml-model', SCHEMA_VERSION_INSTRUCTION);
         this.transduction.instructionBefore('xml-model', SCHEMATRON_INSTRUCTION);
         this.transduction.att("xmlns", "http://www.music-encoding.org/ns/mei");
-        this.transduction.att("meiversion", MEI_VERSION);
+        this.transduction.att("meiversion", "5.0.0-dev");
         this.createEmptyHead();
         this.layer = this.createSingleStaffMusic(4);
         this.lastNeumePitches = [];

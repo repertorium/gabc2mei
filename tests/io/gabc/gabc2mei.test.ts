@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import 'jest-xml-matcher'
-import {GABC2MEITransducer, GABC2MEIUtils} from "../../../src/grammars/gabc_mei_transducer";
-import {ELineOrSpace, IPositionInStaff, mOOsicaeFactory} from "../../../src";
+import {GABC2MEITransducer} from "../../../src/grammars/gabc_mei_transducer";
 import {gabcPitchToPositionInStaff} from "../../../src/grammars/gabc_utils";
+import {ELineOrSpace, IPositionInStaff, mOOsicaeFactory} from "../../../src";
 
 function check(inputFileName: string) {
     const gabcFilePath = require.resolve('./files/' + inputFileName + '.gabc');
